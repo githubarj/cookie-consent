@@ -4,6 +4,9 @@ const loginForm = document.getElementById("login-form");
 const modalText = document.getElementById("modal-text");
 
 loginForm.addEventListener("submit", (e) => {
+  const loginFormData = new FormData(loginForm);
+  const fullName = loginFormData.get("fullName");
+
   e.preventDefault();
   modalText.innerHTML = ` <div class="modal-inner-loading">
     <img src="images/loading.svg" class="loading">
@@ -19,12 +22,13 @@ loginForm.addEventListener("submit", (e) => {
   setTimeout(() => {
     document.getElementById(
       "modal-inner"
-    ).innerHTML = `<h2>Thanks you sucker! </h2>
+    ).innerHTML = `<h2>Thanks <span class="modal-display-name">${fullName}</span>, you sucker! </h2>
     <p>We just sold the rights to your eternal soul.</p>
     <div class="idiot-gif">
         <img src="images/pirate.gif">
     </div>
     `;
+    modalCloseBtn.disabled = false;
   }, 3000);
 });
 
