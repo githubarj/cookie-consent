@@ -2,6 +2,11 @@ const modal = document.getElementById("modal");
 const modalCloseBtn = document.getElementById("modal-close-btn");
 const loginForm = document.getElementById("login-form");
 const modalText = document.getElementById("modal-text");
+const declineButton = document.getElementById("decline-btn");
+
+declineButton.addEventListener("mouseenter", () => {
+  document.getElementById("modal-choice-btns").classList.toggle('reverse');
+});
 
 loginForm.addEventListener("submit", (e) => {
   const loginFormData = new FormData(loginForm);
@@ -39,3 +44,5 @@ modalCloseBtn.addEventListener("click", () => {
 setTimeout(() => {
   modal.style.display = "block";
 }, 1500);
+
+
