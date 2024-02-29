@@ -11,6 +11,21 @@ loginForm.addEventListener("submit", (e) => {
         Uploading your data to the dark web...
     </p>
 </div> `;
+
+  setTimeout(() => {
+    document.getElementById("uploadText").innerText = "Making the sale...";
+  }, 1500);
+
+  setTimeout(() => {
+    document.getElementById(
+      "modal-inner"
+    ).innerHTML = `<h2>Thanks you sucker! </h2>
+    <p>We just sold the rights to your eternal soul.</p>
+    <div class="idiot-gif">
+        <img src="images/pirate.gif">
+    </div>
+    `;
+  }, 3000);
 });
 
 modalCloseBtn.addEventListener("click", () => {
